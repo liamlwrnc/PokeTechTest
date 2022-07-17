@@ -6,6 +6,7 @@
         public string Name;
         public int Health;
         public int Attack;
+        public string Move;
     }
 
     // im now creating lists of both my rivals and my own pokemon so I can select from them to decide who is battling who
@@ -15,32 +16,38 @@
             new Pokemon {
                 Name = "Mr.Mime",
                 Health = 250,
-                Attack = 500
+                Attack = 500,
+                Move = "Psychic"
             },
             new Pokemon {
                 Name = "Dragonite",
                 Health = 600,
-                Attack = 600
+                Attack = 600,
+                Move = "Hyper Beam"
             },
             new Pokemon {
                 Name= "Electrode",
                 Health = 300,
-                Attack = 300
+                Attack = 300,
+                Move = "Explode"
             },
             new Pokemon {
                 Name = "Lapras",
-                Health = 200,
-                Attack = 50
+                Health = 500,
+                Attack = 350,
+                Move = "Water Cannon"
             },
             new Pokemon {
                 Name = "Haunter",
                 Health = 400,
-                Attack = 350
+                Attack = 350,
+                Move = "Night Shade"
             },
             new Pokemon {
                 Name = "Zapdos",
                 Health = 500,
-                Attack = 350
+                Attack = 350,
+                Move = "Thunder"
             }
         };
 
@@ -49,35 +56,41 @@
             new Pokemon {
                 Name = "Blastoise",
                 Health = 400,
-                Attack = 350
+                Attack = 350,
+                Move = "Hydro Pump"
             },
             new Pokemon {
                 Name = "Charizard",
                 Health = 500,
-                Attack = 500
+                Attack = 500,
+                Move = "Fire Blast"
             },
             new Pokemon {
                 Name = "Venasaur",
                 Health= 600,
-                Attack = 450
+                Attack = 450,
+                Move = "Razor Leaf"
             },
             new Pokemon
             {
                 Name = "Arcanine",
                 Health = 400,
-                Attack = 400
+                Attack = 400,
+                Move = "Flamethrower"
             },
             new Pokemon
             {
                 Name = "Mewtwo",
                 Health = 1000,
-                Attack = 1000
+                Attack = 1000,
+                Move = "Psystrike"
             },
             new Pokemon
             {
                 Name = "Articuno",
                 Health = 500,
-                Attack = 350
+                Attack = 350,
+                Move = "Ice Breath"
             }
         };
 
@@ -97,6 +110,9 @@
             else
                 text = "This is no time to chicken out! We're doing this!";
 
+            Console.WriteLine(text);
+            Console.ReadLine();
+
             // this will randomly select an entry from the list garyPokemon to set our opponent
             var rnd = new Random();
             var randomChoice = garyPokemon[rnd.Next(garyPokemon.Count)];
@@ -115,6 +131,7 @@
             //Console.WriteLine("Please choose your Pokemon");
 
             // using a foreach loop here to print out each element of the list individually
+
             //foreach (var pokemon in myPokemon)
             //{
             //    Console.WriteLine(pokemon.Name);
@@ -139,13 +156,17 @@
             //Console.ReadLine();
 
             // the above code is commented out as I realised I wouldnt be able to use a comparison operator to determine a winner when 
-            // randomChoice was an int and myChoice would be a string
+            // randomChoice was an int and myChoice would be a string. I wanted to leave it included to show my thinking throughout
 
 
             Console.WriteLine("Type Go to Attack!");
             input = Console.ReadLine();
             Console.WriteLine();
 
+            Console.WriteLine(randomChoice.Name + " used " + randomChoice.Move + "!");
+            Console.WriteLine("");
+            Console.WriteLine(myChoice.Name + " used " + myChoice.Move + "!");
+            Console.WriteLine("");
             Console.WriteLine("The ground trembles as these two titans engage in a fierce battle. However, there can be only one winner!");
             Console.WriteLine("");
 
